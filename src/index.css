@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 207 91% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 207 91% 96%;
+    --accent-foreground: 207 91% 42%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 207 91% 42%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .luxury-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .hover-lift {
+    @apply transform transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 md:px-8 lg:px-12;
+  }
+  
+  .button-primary {
+    @apply bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .button-secondary {
+    @apply bg-white text-blue-700 border border-blue-700 px-6 py-3 rounded-md hover:bg-blue-50 transition-all duration-300;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-estate-200 rounded-md focus:ring-1 focus:ring-blue-700 focus:border-blue-700 outline-none transition-all duration-200;
+  }
+  
+  .heading-xl {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight;
+  }
+  
+  .heading-lg {
+    @apply text-2xl md:text-3xl font-display font-bold tracking-tight;
+  }
+  
+  .heading-md {
+    @apply text-xl md:text-2xl font-display font-semibold;
+  }
+  
+  .subtle-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .subtle-scroll::-webkit-scrollbar-thumb {
+    @apply bg-estate-300 rounded-full;
+  }
+  
+  .subtle-scroll::-webkit-scrollbar-track {
+    @apply bg-estate-100;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-white font-medium px-1 py-2 transition-colors duration-200 after:absolute after:w-0 after:h-0.5 after:bg-white after:bottom-0 after:left-0 after:transition-all after:duration-300 hover:after:w-full;
+  }
+  
+  .property-card {
+    @apply bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col;
+  }
+  
+  .service-card {
+    @apply bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-estate-100;
+  }
+  
+  .news-card {
+    @apply relative overflow-hidden rounded-xl shadow-md h-full;
+  }
+  
+  .news-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-90 transition-opacity duration-300;
+  }
+  
+  .news-card-content {
+    @apply absolute bottom-0 left-0 p-6 z-10 w-full;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 116, 139, 0.5);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(241, 245, 249, 0.5);
+}
